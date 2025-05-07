@@ -2,11 +2,11 @@
 
 ![Uber Analysis Dashboard](dashboard_preview.png)
 
-## 📊 Project Overview
+## Project Overview
 
 A comprehensive Power BI dashboard for analyzing Uber trip data to gain insights into booking trends, revenue generation, and trip efficiency. This project helps stakeholders make data-driven decisions by visualizing key performance indicators and trends in an interactive dashboard.
 
-## 🌟 Dashboard Previews
+## Dashboard Previews
 
 ### Dashboard 1: Overview Analysis
 ![Uber analysis-1](https://github.com/user-attachments/assets/53fc5f07-8dd7-40fb-a52f-7ba4b6dd921a)
@@ -20,7 +20,7 @@ A comprehensive Power BI dashboard for analyzing Uber trip data to gain insights
 ![Uber analysis-3](https://github.com/user-attachments/assets/c4d540c3-b9c1-434e-bf1c-9a644e5bd8d7)
 *Granular trip data with filtering and drill-through capabilities*
 
-## 🎯 Business Requirements
+## Business Requirements
 
 The project provides three interconnected dashboards:
 
@@ -33,7 +33,7 @@ Focuses on temporal patterns with visualizations segmented by different time int
 ### Dashboard 3: Details Tab
 Offers granular access to individual trip records with drill-through capabilities.
 
-## 📈 Key Performance Indicators
+## Key Performance Indicators
 
 The dashboards track the following KPIs:
 
@@ -44,7 +44,7 @@ The dashboards track the following KPIs:
 - **Average Trip Distance**: Average customer travel distance per trip
 - **Average Trip Time**: Average duration of trips
 
-## 🔍 Features & Visualizations
+## Features & Visualizations
 
 ### Overview Analysis Dashboard
 - **Dynamic Measure Selector**: Toggle between different KPIs using a disconnected table
@@ -70,7 +70,7 @@ The dashboards track the following KPIs:
 - **Drill-Through Functionality**: Access detailed records from other dashboard visuals
 - **Full Data View Bookmark**: Toggle between filtered and complete datasets
 
-## 💡 Enhanced User Experience
+## Enhanced User Experience
 - **Dynamic Titles**: Chart titles update based on selected measures
 - **Interactive Slicers**: Filters for date, city, and other parameters
 - **Enhanced Tooltips**: Show additional details on hover
@@ -78,7 +78,7 @@ The dashboards track the following KPIs:
 - **Clear Filters Button**: Reset all selections with one click
 - **Export Functionality**: Download raw data for external analysis
 
-## 📝 Dataset Description
+## Dataset Description
 
 The analysis is based on the "Uber Trip Details" dataset containing over 100,000 trip records with the following fields:
 
@@ -101,7 +101,7 @@ The analysis is based on the "Uber Trip Details" dataset containing over 100,000
 - **DAX**: Advanced calculations and measures
 - **Excel**: Source data management
 
-## 📊 DAX Measures
+## DAX Measures
 
 ### Core KPI Measures
 
@@ -231,54 +231,21 @@ Booking Value by Payment =
     )
 ```
 
-### Advanced Calculations
-
-```dax
-// Trip Efficiency (Revenue per Mile)
-Trip Efficiency = 
-    DIVIDE([Total Booking Value], [Total Trip Distance], 0)
-
-// Night Trip Flag
-Is Night Trip = 
-IF(
-    OR(
-        HOUR('Trip Details'[Pickup Time]) >= 20,
-        HOUR('Trip Details'[Pickup Time]) < 6
-    ),
-    1,
-    0
-)
-
-// Night Trip Booking Value
-Night Trip Value = 
-    CALCULATE(
-        [Total Booking Value],
-        [Is Night Trip] = 1
-    )
-
-// Day Trip Booking Value
-Day Trip Value = 
-    CALCULATE(
-        [Total Booking Value],
-        [Is Night Trip] = 0
-    )
-```
-
-## 📋 Expected Outcomes
+##  Expected Outcomes
 
 - Identify trends in ride bookings and revenue generation
 - Analyze trip efficiency in terms of distance and duration
 - Compare booking values and trip patterns across different time periods
 - Provide insights to optimize pricing models and improve customer satisfaction
 
-## 📁 Repository Contents
+##  Repository Contents
 
 - `Uber Trip Details.xlsx`: Source data containing trip records
 - `Uber analysis.pdf`: PDF export of the final dashboard visualizations
 - `Problem Statement.docx`: Original business requirements document
 - `Uber_Trip_Analysis.pbix`: Power BI file with complete dashboard implementation
 
-## 🔄 Data Model & Relationships
+##  Data Model & Relationships
 
 The data model for this project consists of the following tables and relationships:
 
