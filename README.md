@@ -92,7 +92,7 @@ The analysis is based on the "Uber Trip Details" dataset containing over 100,000
 - Vehicle Type
 - Payment Type
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Power BI**: Primary tool for dashboard development
 - **Power Query**: Data cleaning and transformation
@@ -303,7 +303,7 @@ Trip Details (Fact Table)
 #### Measure Selector (Disconnected Table)
 - Measure (Text) - Contains values for dynamic measure selection
 
-## 🚀 How to Use
+## How to Use
 
 1. Clone this repository
 2. Open the Power BI file using Power BI Desktop
@@ -377,7 +377,7 @@ in
 4. **Outlier Handling**: Removed trips with unrealistic distances or durations
 5. **Disconnected Tables**: Created disconnected tables for measure selection and visualization control
 
-## 📈 Sample Insights & Key Findings
+## Sample Insights & Key Findings
 
 From the analysis of over 100,000 Uber trips, the following insights were derived:
 
@@ -413,52 +413,7 @@ From the analysis of over 100,000 Uber trips, the following insights were derive
 4. **Route Optimization**: Address inefficient routes through driver education and navigation improvements
 5. **Location-Based Promotions**: Create targeted promotions for underserved high-potential areas
 
-## 🔍 Implementation Challenges & Solutions
 
-During the development of this dashboard, several technical challenges were encountered and solved:
-
-### Challenge 1: Performance Optimization with Large Dataset
-**Problem**: The dataset of over 100,000 records caused significant performance issues with complex visuals.
-
-**Solution**: 
-```
-// Implemented aggregation strategies
-1. Created pre-calculated aggregation tables
-2. Used Power BI incremental refresh feature
-3. Optimized DAX measures to limit calculation scope
-```
-
-### Challenge 2: Location Relationship Modeling
-**Problem**: Needed to establish relationships between pickup and drop-off locations using the same dimension table.
-
-**Solution**:
-```dax
-// Created inactive relationships and used USERELATIONSHIP in measures
-// Example measure for drop-off location analysis
-Trips by Dropoff Location = 
-CALCULATE(
-    COUNT('Trip Details'[Trip ID]),
-    USERELATIONSHIP('Trip Details'[DOLocationID], 'Locations'[LocationID])
-)
-```
-
-### Challenge 3: Dynamic Time Interval Analysis
-**Problem**: Needed to allow users to analyze data at various time granularities (hourly, daily, 10-minute intervals).
-
-**Solution**:
-```
-// Created custom time intelligence functions
-// Built time dimension with multiple hierarchies
-// Implemented parameter-driven time interval selection
-```
-
-## 👥 Contact
-
-For questions or collaboration opportunities, please reach out through:
-
-- GitHub: [Your GitHub Profile]
-- LinkedIn: [Your LinkedIn Profile]
-- Email: [Your Email Address]
 
 ---
 
