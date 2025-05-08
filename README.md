@@ -311,7 +311,7 @@ Trip Details (Fact Table)
 4. Refresh the data if needed
 5. Interact with the dashboard using the provided slicers and filters
 
-## 🧹 Data Preparation & ETL Process
+## Data Preparation & ETL Process
 
 The raw Uber trip data required several transformation steps before analysis:
 
